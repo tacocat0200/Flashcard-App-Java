@@ -27,3 +27,30 @@ The Flashcard App is a web-based application designed to help users create, mana
    ```bash
    git clone git@github.com:tacocat0200/Flashcard-App-Java-.git
    cd Flashcard-App-Java-
+2. Configure Database:
+
+-Create a MySQL database named flashcard_app
+-Update the src/main/resources/config.yml file with your database connection details.
+
+3. Install Dependencies:
+
+mvn install
+
+4. Run the Application
+
+
+mvn exec:java -Dexec.mainClass="com.example.flashcardapp.FlashcardApplication"
+
+## Usage
+Navigate to http://localhost:8080 in your web browser.
+Use the provided endpoints to interact with the Flashcard App:
+POST /api/flashcards: Create a new flashcard.
+GET /api/flashcards: Retrieve all flashcards.
+GET /api/flashcards/{id}: Retrieve a flashcard by ID.
+PUT /api/flashcards/{id}: Update a flashcard.
+DELETE /api/flashcards/{id}: Delete a flashcard.
+Testing
+
+To run the tests, use the following command:
+
+mvn test
