@@ -1,0 +1,51 @@
+# Flashcard App Configuration Example
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  url: jdbc:mysql://localhost:3306/flashcarddb?useSSL=false&serverTimezone=UTC
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate.hbm2ddl.auto: validate
+    hibernate.show_sql: false
+    hibernate.format_sql: false
+
+hibernate:
+  entityPackages:
+    - com.example.flashcardapp.core
+
+logging:
+  level: INFO
+  loggers:
+    com.example.flashcardapp: DEBUG
+  appenders:
+    - type: console
+      threshold: ALL
+      layout:
+        type: pattern
+        pattern: "%d [%t] %-5p %c - %m%n"
+
+jwt:
+  secret: ${JWT_SECRET}
+  issuer: flashcard-app
+  expiration_minutes: 60
+
+swagger:
+  resourcePackage: com.example.flashcardapp.resources
+  title: Flashcard App API
+  version: 1.0.0
+  description: API documentation for the Flashcard App
+  schemes:
+    - http
+  basePath: /
+  host: localhost:8080

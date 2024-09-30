@@ -1,0 +1,33 @@
+flashcard-app/
+├── .github/
+│   └── ISSUE_TEMPLATE.md
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── flashcardapp/
+│   │   │               ├── FlashcardAppApplication.java---2kb
+│   │   │               ├── FlashcardAppConfiguration.java---3kb
+│   │   │               ├── core/
+│   │   │               │   └── Flashcard.java --- 4kb
+│   │   │               ├── db/
+│   │   │               │   └── FlashcardDAO.java---3kb
+│   │   │               └── resources/
+│   │   │                   └── FlashcardResource.java---5kb
+│   │   └── resources/
+│   │       ├── config.yml---------------------------------(2kb)
+│   │       └── migrations/
+│   │           └── db.changelog-master.xml-----------------4kb
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── example/
+│                   └── flashcardapp/
+│                       └── FlashcardResourceTest.java---- (9kb)
+├── target/
+│   └── (Compiled files and build artifacts)
+├── .gitignore
+├── pom.xml----8kb
+├── README.md
+└── LICENSE
